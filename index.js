@@ -11,6 +11,7 @@ window.onload = function() {
             for (let i = 0; i < jsonData.length; i++) {
                 let button = document.createElement('button')
                 button.innerHTML = 'Add to Cart'
+                button.classList.add('add-class')
                 let skipButton = document.createElement('button')
                 skipButton.classList.add('skip-class')
                 skipButton.innerHTML = 'Skip'
@@ -22,7 +23,7 @@ window.onload = function() {
                 ul.appendChild(skipButton)
                 body.appendChild(ul)
             }
-            let addedButton = document.getElementsByTagName('button')
+            let addedButton = document.getElementsByClassName('add-class')
             let addedListItem = document.getElementsByTagName('li')
             let newUl = document.createElement('ul')
             let cartText = document.createElement('h3')
@@ -40,7 +41,7 @@ window.onload = function() {
                     newUl.appendChild(cartListItem)
                     newUl.appendChild(delButton)
                     body.appendChild(newUl)
-                    let deleteButton = document.querySelectorAll('.btn-class')
+                    let deleteButton = document.getElementsByClassName('.btn-class')
                     let delListItem = document.getElementsByClassName('li-class')
                     for (let i = 0; i < deleteButton.length; i++) {
                         deleteButton[i].addEventListener('click', function delItem() {
@@ -52,12 +53,16 @@ window.onload = function() {
 
                 })
             }
-            /*let skippedButton = document.getElementsByClassName('skip-class')
+            let skippedButton = document.getElementsByClassName('skip-class')
             let skipListItem = document.getElementsByClassName('primary-li')
+            let addCart = document.getElementsByClassName('add-class')
             for (let i = 0; i < skippedButton.length; i++) {
                 skippedButton[i].addEventListener('click', function skipItem() {
                     skipListItem[i].style.display = 'none'
+                    skippedButton[i].style.display = 'none'
+                    addCart[i].style.display = 'none'
+
                 })
-            }*/
+            }
         })
 }

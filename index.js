@@ -41,7 +41,7 @@ window.onload = function() {
                     newUl.appendChild(cartListItem)
                     newUl.appendChild(delButton)
                     body.appendChild(newUl)
-                    let deleteButton = document.getElementsByClassName('.btn-class')
+                    let deleteButton = document.querySelectorAll('.btn-class')
                     let delListItem = document.getElementsByClassName('li-class')
                     for (let i = 0; i < deleteButton.length; i++) {
                         deleteButton[i].addEventListener('click', function delItem() {
@@ -49,8 +49,6 @@ window.onload = function() {
                             delListItem[i].style.display = 'none'
                         })
                     }
-
-
                 })
             }
             let skippedButton = document.getElementsByClassName('skip-class')
@@ -61,7 +59,6 @@ window.onload = function() {
                     skipListItem[i].style.display = 'none'
                     skippedButton[i].style.display = 'none'
                     addCart[i].style.display = 'none'
-
                 })
             }
         })
